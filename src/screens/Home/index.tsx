@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { RefreshControl } from "react-native";
 
 import { Container, Scroller } from "./styles";
@@ -11,7 +11,9 @@ export default function Home() {
     const [hideSensitive, setHideSensitive] = useState(false);
     const [refreshing, setRefreshing] = useState(false);
 
-    const toggleSensitive = () => setHideSensitive(!hideSensitive);
+    const toggleSensitive = useCallback(() => {
+        setHideSensitive((state) => !state);
+    }, []);
 
     function timeout(ms) {
         return new Promise((resolve) => setTimeout(resolve, ms));
@@ -37,7 +39,7 @@ export default function Home() {
                     />
                 }
             >
-                <CreditCardWidget />
+                <CreditCardWidget hideSensitive={hideSensitive} />
                 <BankAccountWidget />
             </Scroller>
 

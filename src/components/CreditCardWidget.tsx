@@ -41,7 +41,7 @@ const AvailableLimitAmount = styled.Text`
     font-weight: bold;
 `;
 
-export default function CreditCardWidget() {
+export default function CreditCardWidget({ hideSensitive = false }) {
     return (
         <Container>
             <TitleArea>
@@ -55,12 +55,20 @@ export default function CreditCardWidget() {
             </TitleArea>
 
             <CurrentInvoiceText>Fatura atual</CurrentInvoiceText>
-            <CurrentInvoiceAmount>R$ 724,81</CurrentInvoiceAmount>
 
-            <AvailableLimitArea>
-                <AvailableLimitText>Limite disponível </AvailableLimitText>
-                <AvailableLimitAmount>R$ 23.812,23</AvailableLimitAmount>
-            </AvailableLimitArea>
+            {hideSensitive && (
+                <>
+                    <CurrentInvoiceAmount>R$ 724,81</CurrentInvoiceAmount>
+                    <AvailableLimitArea>
+                        <AvailableLimitText>
+                            Limite disponível{" "}
+                        </AvailableLimitText>
+                        <AvailableLimitAmount>
+                            R$ 23.812,23
+                        </AvailableLimitAmount>
+                    </AvailableLimitArea>
+                </>
+            )}
         </Container>
     );
 }
