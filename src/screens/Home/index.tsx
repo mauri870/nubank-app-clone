@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import EyeOutlineIcon from 'react-native-eva-icons/icons/EyeOutline';
-import EyeOffOutlineIcon from 'react-native-eva-icons/icons/EyeOffOutline';
-import SettingsOutlineIcon from 'react-native-eva-icons/icons/Settings_2Outline';
+import React, { useState } from "react";
+import EyeOutlineIcon from "react-native-eva-icons/icons/EyeOutline";
+import EyeOffOutlineIcon from "react-native-eva-icons/icons/EyeOffOutline";
+import SettingsOutlineIcon from "react-native-eva-icons/icons/Settings_2Outline";
 
 import {
     Container,
@@ -11,10 +11,10 @@ import {
     IconsArea,
     HideSensitiveButton,
     SettingsButton,
-    Scroller
-} from './styles';
-import CreditCardWidget from '../../components/CreditCardWidget';
-import BankAccountWidget from '../../components/BankAccountWidget';
+    Scroller,
+} from "./styles";
+import CreditCardWidget from "../../components/CreditCardWidget";
+import BankAccountWidget from "../../components/BankAccountWidget";
 
 export default function Home() {
     const [hideSensitive, setHideSensitive] = useState(false);
@@ -25,18 +25,30 @@ export default function Home() {
         <Container>
             <TopBar>
                 <WelcomeArea>
-                    <WelcomeText>Olá, Mauri</WelcomeText>    
+                    <WelcomeText>Olá, Mauri</WelcomeText>
                 </WelcomeArea>
                 <IconsArea>
                     <HideSensitiveButton onPress={toggleSensitive}>
                         {hideSensitive ? (
-                            <EyeOffOutlineIcon width={28} height={28} fill="#FFFFFF" />
-                        ) : ( 
-                            <EyeOutlineIcon width={28} height={28} fill="#FFFFFF" />
+                            <EyeOffOutlineIcon
+                                width={28}
+                                height={28}
+                                fill="#FFFFFF"
+                            />
+                        ) : (
+                            <EyeOutlineIcon
+                                width={28}
+                                height={28}
+                                fill="#FFFFFF"
+                            />
                         )}
                     </HideSensitiveButton>
                     <SettingsButton>
-                        <SettingsOutlineIcon width={28} height={28} fill="#FFFFFF" />
+                        <SettingsOutlineIcon
+                            width={28}
+                            height={28}
+                            fill="#FFFFFF"
+                        />
                     </SettingsButton>
                 </IconsArea>
             </TopBar>
@@ -46,5 +58,5 @@ export default function Home() {
                 <BankAccountWidget />
             </Scroller>
         </Container>
-    )
+    );
 }

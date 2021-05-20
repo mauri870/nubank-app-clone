@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import styled from 'styled-components/native';
-import SmartphoneOutlineIcon from 'react-native-eva-icons/icons/SmartphoneOutline';
+import React, { useState } from "react";
+import styled from "styled-components/native";
+import SmartphoneOutlineIcon from "react-native-eva-icons/icons/SmartphoneOutline";
 
 const Container = styled.View`
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 3px;
     align-items: flex-start;
@@ -53,10 +53,9 @@ export default function CreditCardWidget() {
             <CurrentInvoiceAmount>R$ 724,81</CurrentInvoiceAmount>
 
             <AvailableLimitArea>
-                <AvailableLimitText>Limite disponível {' '}
-                </AvailableLimitText>
+                <AvailableLimitText>Limite disponível </AvailableLimitText>
                 <AvailableLimitAmount>R$ 23.812,23</AvailableLimitAmount>
             </AvailableLimitArea>
         </Container>
-    )
+    );
 }

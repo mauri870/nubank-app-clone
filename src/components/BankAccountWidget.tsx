@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import styled from 'styled-components/native';
-import ShoppingBagOutlineIcon from 'react-native-eva-icons/icons/ShoppingBagOutline';
-import SquareOutlineIcon from 'react-native-eva-icons/icons/SquareOutline';
-import CheckmarkSquareIcon from 'react-native-eva-icons/icons/CheckmarkSquare_2';
+import React, { useState } from "react";
+import styled from "styled-components/native";
+import ShoppingBagOutlineIcon from "react-native-eva-icons/icons/ShoppingBagOutline";
+import SquareOutlineIcon from "react-native-eva-icons/icons/SquareOutline";
+import CheckmarkSquareIcon from "react-native-eva-icons/icons/CheckmarkSquare_2";
 
 const Container = styled.View`
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 3px;
     align-items: flex-start;
@@ -46,15 +46,25 @@ const ChecklistItem = ({ selected = false, text }) => {
     return (
         <ChecklistItemArea>
             {!selected ? (
-                <SquareOutlineIcon width={16} height={16} style={{alignSelf: 'center'}} fill="#727272" />
+                <SquareOutlineIcon
+                    width={16}
+                    height={16}
+                    style={{ alignSelf: "center" }}
+                    fill="#727272"
+                />
             ) : (
-                <CheckmarkSquareIcon width={22} height={22} style={{alignSelf: 'center'}} fill="#5bb75f" />
+                <CheckmarkSquareIcon
+                    width={22}
+                    height={22}
+                    style={{ alignSelf: "center" }}
+                    fill="#5bb75f"
+                />
             )}
 
             <ChecklistItemText>{text}</ChecklistItemText>
         </ChecklistItemArea>
     );
-}
+};
 
 export default function BankAccountWidget() {
     return (
@@ -74,5 +84,5 @@ export default function BankAccountWidget() {
                 <DepositButtonText>DEPOSITAR</DepositButtonText>
             </DepositButton>
         </Container>
-    )
+    );
 }
