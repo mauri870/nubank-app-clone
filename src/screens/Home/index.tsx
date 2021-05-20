@@ -14,6 +14,7 @@ import {
 } from "./styles";
 import CreditCardWidget from "../../components/CreditCardWidget";
 import BankAccountWidget from "../../components/BankAccountWidget";
+import BottomBar from "../../components/BottomBar";
 
 export default function Home() {
     const [hideSensitive, setHideSensitive] = useState(false);
@@ -32,7 +33,33 @@ export default function Home() {
 
     return (
         <Container>
+            <TopBar>
+                <WelcomeArea>
+                    <WelcomeText>Olá, Mauri</WelcomeText>
+                </WelcomeArea>
+                <IconsArea>
+                    <HideSensitiveButton onPress={toggleSensitive}>
+                        <Ionicons
+                            name={
+                                hideSensitive
+                                    ? "eye-off-outline"
+                                    : "eye-outline"
+                            }
+                            size={28}
+                            color="#FFFFFF"
+                        />
+                    </HideSensitiveButton>
+                    <SettingsButton>
+                        <Ionicons
+                            name="settings-outline"
+                            size={28}
+                            color="#FFFFFF"
+                        />
+                    </SettingsButton>
+                </IconsArea>
+            </TopBar>
             <Scroller
+                showsVerticalScrollIndicator={false}
                 refreshControl={
                     <RefreshControl
                         refreshing={refreshing}
@@ -40,34 +67,11 @@ export default function Home() {
                     />
                 }
             >
-                <TopBar>
-                    <WelcomeArea>
-                        <WelcomeText>Olá, Mauri</WelcomeText>
-                    </WelcomeArea>
-                    <IconsArea>
-                        <HideSensitiveButton onPress={toggleSensitive}>
-                            <Ionicons
-                                name={
-                                    hideSensitive
-                                        ? "eye-off-outline"
-                                        : "eye-outline"
-                                }
-                                size={28}
-                                color="#FFFFFF"
-                            />
-                        </HideSensitiveButton>
-                        <SettingsButton>
-                            <Ionicons
-                                name="settings-outline"
-                                size={28}
-                                color="#FFFFFF"
-                            />
-                        </SettingsButton>
-                    </IconsArea>
-                </TopBar>
                 <CreditCardWidget />
                 <BankAccountWidget />
             </Scroller>
+
+            <BottomBar />
         </Container>
     );
 }

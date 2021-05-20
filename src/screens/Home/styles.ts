@@ -4,13 +4,13 @@ import EyeOutlineIcon from 'react-native-eva-icons/icons/EyeOutline';
 export const Container = styled.View`
     flex: 1;
     margin-top: 20px;
-    margin-horizontal: 20px;
 `;
 export const TopBar = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-content: center;
     margin-vertical: 30px;
+    margin-horizontal: 20px;
 `;
 export const WelcomeArea = styled.View`
 `;
@@ -36,4 +36,5 @@ export const SettingsButton = styled.TouchableOpacity`
 `;
 
 export const Scroller = styled.ScrollView`
+    margin-horizontal: 20px;
 `;
