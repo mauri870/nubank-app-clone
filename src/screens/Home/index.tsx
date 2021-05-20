@@ -6,6 +6,7 @@ import CreditCardWidget from "../../components/CreditCardWidget";
 import BankAccountWidget from "../../components/BankAccountWidget";
 import BottomBar from "../../components/BottomBar";
 import TopBar from "../../components/TopBar";
+import LoanWidget from "../../components/LoanWidget";
 
 export default function Home() {
     const [hideSensitive, setHideSensitive] = useState(false);
@@ -41,6 +42,7 @@ export default function Home() {
             >
                 <CreditCardWidget hideSensitive={hideSensitive} />
                 <BankAccountWidget />
+                <LoanWidget hideSensitive={hideSensitive} />
             </Scroller>
 
             <BottomBar />
