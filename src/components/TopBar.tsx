@@ -41,7 +41,7 @@ export default function TopBar({ hideSensitive = false, onClickSensitive }) {
             <IconsArea>
                 <HideSensitiveButton onPress={onClickSensitive}>
                     <Ionicons
-                        name={hideSensitive ? "eye-off-outline" : "eye-outline"}
+                        name={hideSensitive ? "eye-outline" : "eye-off-outline"}
                         size={28}
                         color="#FFFFFF"
                     />

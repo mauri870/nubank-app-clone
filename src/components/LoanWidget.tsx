@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components/native";
+import ContentLoader, { Rect } from "react-content-loader/native";
 import { FontAwesome5 } from "@expo/vector-icons";
 
 const Container = styled.View`
@@ -41,6 +42,20 @@ const SimulateLoanText = styled.Text`
     color: #820ad1;
 `;
 
+const Loader = (props) => (
+    <ContentLoader
+        speed={1}
+        width={350}
+        height={20}
+        viewBox="0 0 340 20"
+        backgroundColor="#f6f6ef"
+        foregroundColor="#e8e8e3"
+        {...props}
+    >
+        <Rect x="0" y="4" rx="0" ry="0" width="100" height="20" />
+    </ContentLoader>
+);
+
 export default function LoanWidget({ hideSensitive = false }) {
     return (
         <Container>
@@ -55,14 +70,15 @@ export default function LoanWidget({ hideSensitive = false }) {
 
             <AvailableText>Valor disponível de até</AvailableText>
 
-            {hideSensitive && (
-                <>
-                    <AvailableAmount>R$ 10.000,00</AvailableAmount>
-                    <SimulateLoanButton onPress={() => {}}>
-                        <SimulateLoanText>SIMULAR EMPRESTIMO</SimulateLoanText>
-                    </SimulateLoanButton>
-                </>
+            {hideSensitive ? (
+                <Loader />
+            ) : (
+                <AvailableAmount>R$ 10.000,00</AvailableAmount>
             )}
+
+            <SimulateLoanButton onPress={() => {}}>
+                <SimulateLoanText>SIMULAR EMPRESTIMO</SimulateLoanText>
+            </SimulateLoanButton>
         </Container>
     );
 }
