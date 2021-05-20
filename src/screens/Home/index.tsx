@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import EyeOutlineIcon from "react-native-eva-icons/icons/EyeOutline";
-import EyeOffOutlineIcon from "react-native-eva-icons/icons/EyeOffOutline";
-import SettingsOutlineIcon from "react-native-eva-icons/icons/Settings_2Outline";
+import { Ionicons } from "@expo/vector-icons";
 
 import {
     Container,
@@ -29,25 +27,21 @@ export default function Home() {
                 </WelcomeArea>
                 <IconsArea>
                     <HideSensitiveButton onPress={toggleSensitive}>
-                        {hideSensitive ? (
-                            <EyeOffOutlineIcon
-                                width={28}
-                                height={28}
-                                fill="#FFFFFF"
-                            />
-                        ) : (
-                            <EyeOutlineIcon
-                                width={28}
-                                height={28}
-                                fill="#FFFFFF"
-                            />
-                        )}
+                        <Ionicons
+                            name={
+                                hideSensitive
+                                    ? "eye-off-outline"
+                                    : "eye-outline"
+                            }
+                            size={28}
+                            color="#FFFFFF"
+                        />
                     </HideSensitiveButton>
                     <SettingsButton>
-                        <SettingsOutlineIcon
-                            width={28}
-                            height={28}
-                            fill="#FFFFFF"
+                        <Ionicons
+                            name="settings-outline"
+                            size={28}
+                            color="#FFFFFF"
                         />
                     </SettingsButton>
                 </IconsArea>

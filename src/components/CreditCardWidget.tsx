@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components/native";
-import SmartphoneOutlineIcon from "react-native-eva-icons/icons/SmartphoneOutline";
+import { Ionicons } from "@expo/vector-icons";
 
 const Container = styled.View`
     background-color: #ffffff;
@@ -45,7 +45,12 @@ export default function CreditCardWidget() {
     return (
         <Container>
             <TitleArea>
-                <SmartphoneOutlineIcon width={28} height={28} fill="#727272" />
+                <Ionicons
+                    name="card-outline"
+                    size={28}
+                    color="#727272"
+                    style={{ transform: [{ rotate: "90deg" }] }}
+                />
                 <Title>Cartão de crédito</Title>
             </TitleArea>
 

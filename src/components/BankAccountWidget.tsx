@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components/native";
-import ShoppingBagOutlineIcon from "react-native-eva-icons/icons/ShoppingBagOutline";
-import SquareOutlineIcon from "react-native-eva-icons/icons/SquareOutline";
-import CheckmarkSquareIcon from "react-native-eva-icons/icons/CheckmarkSquare_2";
+import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 
 const Container = styled.View`
     background-color: #ffffff;
@@ -45,21 +44,12 @@ const ChecklistItemText = styled.Text`
 const ChecklistItem = ({ selected = false, text }) => {
     return (
         <ChecklistItemArea>
-            {!selected ? (
-                <SquareOutlineIcon
-                    width={16}
-                    height={16}
-                    style={{ alignSelf: "center" }}
-                    fill="#727272"
-                />
-            ) : (
-                <CheckmarkSquareIcon
-                    width={22}
-                    height={22}
-                    style={{ alignSelf: "center" }}
-                    fill="#5bb75f"
-                />
-            )}
+            <Ionicons
+                name={selected ? "checkbox" : "square-outline"}
+                size={selected ? 22 : 16}
+                color={selected ? "#5bb75f" : "#727272"}
+                style={{ alignSelf: "flex-end" }}
+            />
 
             <ChecklistItemText>{text}</ChecklistItemText>
         </ChecklistItemArea>
@@ -70,7 +60,7 @@ export default function BankAccountWidget() {
     return (
         <Container>
             <TitleArea>
-                <ShoppingBagOutlineIcon width={28} height={28} fill="#727272" />
+                <MaterialIcons name="attach-money" size={28} color="#727272" />
                 <Title>Conta</Title>
             </TitleArea>
 
