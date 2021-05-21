@@ -13,6 +13,7 @@ const Container = styled.View`
 const TitleArea = styled.View`
     flex-direction: row;
     align-items: center;
+    margin-bottom: 30px;
 `;
 const Title = styled.Text`
     color: #727272;
@@ -20,7 +21,6 @@ const Title = styled.Text`
     margin-left: 15px;
 `;
 const AvailableText = styled.Text`
-    margin-top: 30px;
     font-size: 16px;
     color: #191919;
 `;
@@ -44,15 +44,15 @@ const SimulateLoanText = styled.Text`
 
 const Loader = (props) => (
     <ContentLoader
-        speed={1}
+        animate={false}
         width={350}
-        height={20}
-        viewBox="0 0 340 20"
+        height={50}
+        viewBox="0 0 400 50"
         backgroundColor="#f6f6ef"
         foregroundColor="#e8e8e3"
         {...props}
     >
-        <Rect x="0" y="4" rx="0" ry="0" width="100" height="20" />
+        <Rect x="0" y="0" rx="0" ry="0" width="350" height="50" />
     </ContentLoader>
 );
 
@@ -68,12 +68,13 @@ export default function LoanWidget({ hideSensitive = false }) {
                 <Title>Empréstimo</Title>
             </TitleArea>
 
-            <AvailableText>Valor disponível de até</AvailableText>
-
             {hideSensitive ? (
                 <Loader />
             ) : (
-                <AvailableAmount>R$ 10.000,00</AvailableAmount>
+                <>
+                    <AvailableText>Valor disponível de até</AvailableText>
+                    <AvailableAmount>R$ 10.000,00</AvailableAmount>
+                </>
             )}
 
             <SimulateLoanButton onPress={() => {}}>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components/native";
-import ContentLoader, { Rect, Circle, Path } from "react-content-loader/native";
+import ContentLoader, { Rect } from "react-content-loader/native";
 import { Ionicons } from "@expo/vector-icons";
 
 const Container = styled.View`
@@ -44,16 +44,15 @@ const AvailableLimitAmount = styled.Text`
 
 const Loader = (props) => (
     <ContentLoader
-        speed={1}
+        animate={false}
         width={350}
         height={50}
-        viewBox="0 0 340 50"
+        viewBox="0 0 400 50"
         backgroundColor="#f6f6ef"
         foregroundColor="#e8e8e3"
         {...props}
     >
-        <Rect x="0" y="4" rx="0" ry="0" width="100" height="30" />
-        <Rect x="0" y="40" rx="0" ry="0" width="200" height="25" />
+        <Rect x="0" y="0" rx="0" ry="0" width="350" height="50" />
     </ContentLoader>
 );
 
